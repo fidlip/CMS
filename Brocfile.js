@@ -1,6 +1,7 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+require('coffee-script/register');
 
 var app = new EmberApp({
   sassOptions: {
