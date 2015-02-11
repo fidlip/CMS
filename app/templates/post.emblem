@@ -1,0 +1,10 @@
+==outlet
+
+h2 POST
+.post
+  .title
+    b Title:
+    =title
+  .text
+    b Text:
+    =text

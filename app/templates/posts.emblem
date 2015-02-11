@@ -1,0 +1,9 @@
+h2 POSTS
+.posts
+  each post in this
+    ==link-to 'post' post
+      .postLine
+        =post.title
+
+
+==outlet

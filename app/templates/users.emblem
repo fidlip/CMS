@@ -1,0 +1,9 @@
+h2 USERS
+.users
+  each user in this
+    ==link-to 'user' user
+      .userLine
+        =user.username
+
+
+==outlet
