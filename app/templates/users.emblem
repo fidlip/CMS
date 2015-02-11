@@ -3,7 +3,7 @@ h2 USERS
   each user in this
     ==link-to 'user' user
       .userLine
-        =user.username
+        =user.userName
 
 
 ==outlet

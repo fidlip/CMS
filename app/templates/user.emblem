@@ -1,14 +1,10 @@
 h3 USER
-.user
+
+em-form model=this
   .username
-    b User Name:
-    =username
-  .firstname
-    b First Name:
-    =firstname
-  .surname
-    b Surname:
-    =surname
+    em-input property="userName" label="User Name" placeholder="Enter a username..."
+    em-input property="firstName" label="First Name" placeholder="Enter a first name..."
+    em-input property="surname" label="Surname" placeholder="Enter a surname..."
 
 
 ==outlet
