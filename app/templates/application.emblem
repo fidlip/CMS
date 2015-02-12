@@ -1,4 +1,35 @@
-h2#title
-  |Welcome to Ember.js
+nav.navbar.navbar-default
+  //.navbar-fixed-top
+  .container
+    .navbar-header
+      a.navbar-brand
+        |Simple CMS
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav
+        li.active
+          a href="#"
+            |Home
+        li
+          a href="users"
+            |Users
+        li
+          a href="posts"
+            |Posts
 
-==outlet
+      //ul.nav.navbar-nav.navbar-right
+      ul.nav.navbar-nav.navbar-right
+        li.dropdown
+          a.dropdown-toggle href="#" data-toggle="dropdown" role="button" aria-expanded="false"
+            |Logged user
+            span.caret
+
+          ul.dropdown-menu
+            li
+              a href="logout"
+                |Logout
+            li
+              a href="profile"
+                |Profile
+
+.content
+  =outlet
