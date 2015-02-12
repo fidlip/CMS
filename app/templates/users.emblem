@@ -1,9 +1,8 @@
-h2 USERS
-.users
-  each user in this
-    ==link-to 'user' user
-      .userLine
+.col-md-2
+  em-list tagName="div" class="list-group" selectedClass="active"
+    each user in this
+      em-list-item tagName="div" class="list-group-item" on-select="selectionChanged" data=user
         =user.userName
 
-
-==outlet
+.col-md-10
+  =outlet

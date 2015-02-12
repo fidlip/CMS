@@ -7,4 +7,4 @@ em-form model=this
     em-input property="surname" label="Surname" placeholder="Enter a surname..."
 
 
-==outlet
+=outlet
