@@ -1,10 +1,7 @@
-==outlet
+h3 POST
 
-h2 POST
-.post
-  .title
-    b Title:
-    =title
-  .text
-    b Text:
-    =text
+em-form model=this
+  em-input property="title" label="title" placeholder="Enter a title..."
+  em-text property="text" label="Text" placeholder="Enter a text..."
+
+=outlet
