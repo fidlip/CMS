@@ -1,6 +1,6 @@
 h3 POST
 
-em-form model=this
+em-form model=model
   em-input property="title" label="title" placeholder="Enter a title..."
   em-text property="text" label="Text" placeholder="Enter a text..."
 
