@@ -6,7 +6,8 @@ import EV from 'ember-validations';
 Controller = Ember.ObjectController.extend EV.Mixin,
   actions:
     submit: ->
-      console.info("SHOULD SUBMIT", @get("title"))
+      #todo: check response from server and handle error states
+      @get('model').save()
       return false
 
   validations:
