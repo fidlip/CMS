@@ -1,0 +1,12 @@
+<div class="col-md-2">
+  {{#em-list tagName="div" class="list-group" selectedClass="active"}}
+    {{#each post in this}}
+      {{#em-list-item tagName="div" class="list-group-item" on-select="selectionChanged" data=post}}
+        {{post.title}}
+      {{/em-list-item}}
+    {{/each}}
+  {{/em-list}}
+</div>
+<div class="col-md-10">
+  {{outlet}}
+</div>
