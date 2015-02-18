@@ -26,20 +26,25 @@
       </ul>
       <!--//ul.nav.navbar-nav.navbar-right-->
       <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="login">
+              {{t cms.menu.login}}
+            </a>
+        </li>
         <li class="dropdown">
           <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
-            Logged user
+            {{t cms.menu.loggedUser}}
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
             <li>
               <a href="logout">
-                Logout
+                {{t cms.menu.logout}}
               </a>
             </li>
             <li>
               <a href="profile">
-                Profile
+                {{t cms.menu.profile}}
               </a>
             </li>
           </ul>

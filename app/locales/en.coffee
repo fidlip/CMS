@@ -7,5 +7,9 @@ en =
       home: "Home"
       users: "Users"
       posts: "Posts"
+      loggedUser: "Logged user"
+      login: "Login"
+      logout: "Logout"
+      profile: "Profile"
 
 `export default en;`
