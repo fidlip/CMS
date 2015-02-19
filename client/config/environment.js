@@ -15,6 +15,10 @@ module.exports = function(environment) {
 
     APP: {
       defaultLocale: 'en'
+    },
+
+    'simple-auth': {
+      serverTokenRevocationEndpoint: '/revoke'
     }
   };
 
