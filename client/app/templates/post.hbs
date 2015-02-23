@@ -1,14 +1,13 @@
-<h3>POST</h3>
+<h3>{{t cms.posts.post}}</h3>
 
 {{#em-form model=controller}}
-  {{em-input property="title" label="Title" placeholder="Enter a title..."}}
-  {{em-text property="text" label="Text" placeholder="Enter a text..."}}
+  {{partial "posts/fields"}}
 {{/em-form}}
 
 <div class="row">
-  {{em-button class="btn" default="Cancel" on-click="cancel"}}
+  {{em-button class="btn" default=(t cms.general.button.cancel) on-click="cancel"}}
   {{#unless isNew}}
-    {{em-button class="btn" default="Delete" on-click="delete"}}
+    {{em-button class="btn" default=(t cms.general.button.delete) on-click="delete"}}
   {{/unless}}
 </div>
 

@@ -1,15 +1,13 @@
-<h3>USER</h3>
+<h3>{{t cms.users.user}}</h3>
 
 {{#em-form model=controller}}
-  {{em-input property="userName" label="User Name" placeholder="Enter a username..."}}
-  {{em-input property="firstName" label="First Name" placeholder="Enter a first name..."}}
-  {{em-input property="surname" label="Surname" placeholder="Enter a surname..."}}
+  {{partial "users/fields"}}
 {{/em-form}}
 
 <div class="row">
-  {{em-button class="btn" default="Cancel" on-click="cancel"}}
+  {{em-button class="btn" default=(t cms.general.button.cancel) on-click="cancel"}}
   {{#unless isNew}}
-    {{em-button class="btn" default="Delete" on-click="delete"}}
+    {{em-button class="btn" default=(t cms.general.button.delete) on-click="delete"}}
   {{/unless}}
 </div>
 
