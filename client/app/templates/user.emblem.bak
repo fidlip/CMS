@@ -1,9 +1,0 @@
-h3 USER
-
-em-form model=controller
-  em-input property="userName" label="User Name" placeholder="Enter a username..."
-  em-input property="firstName" label="First Name" placeholder="Enter a first name..."
-  em-input property="surname" label="Surname" placeholder="Enter a surname..."
-
-
-=outlet

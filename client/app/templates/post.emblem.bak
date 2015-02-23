@@ -1,7 +1,0 @@
-h3 POST
-
-em-form model=controller
-  em-input property="title" label="Title" placeholder="Enter a title..."
-  em-text property="text" label="Text" placeholder="Enter a text..."
-
-=outlet

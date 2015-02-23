@@ -1,8 +1,0 @@
-.col-md-2
-  em-list tagName="div" class="list-group" selectedClass="active"
-    each user in this
-      em-list-item tagName="div" class="list-group-item" on-select="selectionChanged" data=user
-        =user.userName
-
-.col-md-10
-  =outlet
