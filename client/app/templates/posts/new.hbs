@@ -1,5 +1,6 @@
-<h3>POST</h3>
+<h3>NEW POST</h3>
 
+{{log "controller=" controller}}
 {{#em-form model=controller}}
   {{em-input property="title" label="Title" placeholder="Enter a title..."}}
   {{em-text property="text" label="Text" placeholder="Enter a text..."}}
@@ -7,9 +8,6 @@
 
 <div class="row">
   {{em-button class="btn" default="Cancel" on-click="cancel"}}
-  {{#unless isNew}}
-    {{em-button class="btn" default="Delete" on-click="delete"}}
-  {{/unless}}
 </div>
 
 {{outlet}}

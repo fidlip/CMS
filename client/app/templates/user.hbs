@@ -6,4 +6,11 @@
   {{em-input property="surname" label="Surname" placeholder="Enter a surname..."}}
 {{/em-form}}
 
+<div class="row">
+  {{em-button class="btn" default="Cancel" on-click="cancel"}}
+  {{#unless isNew}}
+    {{em-button class="btn" default="Delete" on-click="delete"}}
+  {{/unless}}
+</div>
+
 {{outlet}}

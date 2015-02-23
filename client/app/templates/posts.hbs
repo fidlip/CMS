@@ -1,8 +1,14 @@
 <div class="col-md-2">
+  {{em-button class="btn" default="Add" on-click="add"}}
+
   {{#em-list tagName="div" class="list-group" selectedClass="active"}}
     {{#each post in this}}
       {{#em-list-item tagName="div" class="list-group-item" on-select="selectionChanged" data=post}}
-        {{post.title}}
+        {{#if post.title}}
+          {{post.title}}
+        {{else}}
+            <i>... NEW POST ...</i>
+        {{/if}}
       {{/em-list-item}}
     {{/each}}
   {{/em-list}}

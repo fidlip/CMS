@@ -1,6 +1,6 @@
 `
 import Ember from 'ember';
-import DetailHandler from './mixins/detailHandler';
+import DetailHandler from '../mixins/detailHandler';
 `
 
 Controller = Ember.ObjectController.extend DetailHandler,

@@ -4,6 +4,7 @@ import ListHandler from './mixins/listHandler'
 `
 
 Controller = Ember.ArrayController.extend ListHandler,
+  baseModel: "User"
   subRoute: "user"
 
 `export default Controller;`

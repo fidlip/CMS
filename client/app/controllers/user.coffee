@@ -1,14 +1,10 @@
 `
-import Ember from 'ember';
-import EV from 'ember-validations';
+    import Ember from 'ember';
+    import DetailHandler from './mixins/detailHandler';
 `
 
-Controller = Ember.ObjectController.extend EV.Mixin,
-  actions:
-    submit: ->
-      #todo: check response from server and handle error states
-      @get('model').save()
-      return false
+Controller = Ember.ObjectController.extend DetailHandler,
+  superRoute: "users"
 
   validations:
     userName:

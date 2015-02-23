@@ -1,8 +1,14 @@
 <div class="col-md-2">
+  {{em-button class="btn" default="Add" on-click="add"}}
+
   {{#em-list tagName="div" class="list-group" selectedClass="active"}}
     {{#each user in this}}
       {{#em-list-item tagName="div" class="list-group-item" on-select="selectionChanged" data=user}}
-        {{user.userName}}
+        {{#if user.userName}}
+          {{user.userName}}
+        {{else}}
+          <i>... NEW USER ...</i>
+        {{/if}}
       {{/em-list-item}}
     {{/each}}
   {{/em-list}}
