@@ -3,6 +3,6 @@
 PostRoute = Ember.Route.extend
 
   actions:
-    submitOK: -> false
+    submitOK: -> false #nothing to do
 
 `export default PostRoute`

@@ -4,11 +4,12 @@ Mixin = Ember.Mixin.create
 
   baseModel: null
   subRoute: null
+  newRoute: null
 
   actions:
     add: ->
       console.info("Add new item to ", @get("subRoute"))
-      this.transitionToRoute("posts.new")
+      this.transitionToRoute(@get("newRoute"))
       return false
 
     selectionChanged: (listItem)->

@@ -1,7 +1,7 @@
 `
 import Ember from 'ember';
-import DetailHandler from './mixins/detailHandler';
-import Validations from './posts/postValidations';
+import DetailHandler from '../mixins/detailHandler';
+import Validations from './userValidations';
 `
 
 Controller = Ember.ObjectController.extend DetailHandler, Validations,

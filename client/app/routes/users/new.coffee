@@ -2,15 +2,15 @@
 
 Route = Ember.Route.extend
   model: ->
-    console.info("NEW POST MODEL", @store)
-    ret = @store.createRecord("post")
+    console.info("NEW USER MODEL", @store)
+    ret = @store.createRecord("user")
     return ret
 
 
   actions:
     submitOK: (model)->
       console.info("SUBMIT OK -> ", model.get("id"))
-      @transitionTo("post", model)
+      @transitionTo("user", model)
       return false
 
 

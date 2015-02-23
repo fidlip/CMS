@@ -1,15 +1,10 @@
 `
 import Ember from 'ember';
 import DetailHandler from '../mixins/detailHandler';
+import Validations from './postValidations';
 `
 
-Controller = Ember.ObjectController.extend DetailHandler,
+Controller = Ember.ObjectController.extend DetailHandler, Validations,
   superRoute: "posts"
-
-  validations:
-    title:
-      presence: true
-    text:
-      presence: true
 
 `export default Controller;`
