@@ -12,6 +12,11 @@
     "ember-qunit": "0.2.8",
     "ember-qunit-notifications": "0.0.7",
     "qunit": "~1.17.1",
-    "bootstrap-sass-official": "~3.3.3"
+    "bootstrap-fileinput": "~4.1.3",
+    "bootstrap-sass-official": "~3.3.3",
+    "ember-simple-auth": "~0.7.3",
+    "ember-cli-moment-shim": "~0.0.2",
+    "wookmark-jquery": "~1.4.8",
+    "geoPosition": "latest"
   }
 }

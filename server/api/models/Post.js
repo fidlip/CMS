@@ -7,8 +7,16 @@
 
 module.exports = {
 
-  attributes: {
+	attributes: {
+		// relationships
+		user: {
+		    model: 'user'
+		},
 
-  }
+		//attr
+		title : { type: 'string' },
+		text : { type: 'string' },
+		tags : { type: 'array' }
+	}
 };
 

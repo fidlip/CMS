@@ -22,9 +22,10 @@ en =
     users:
       user: "User"
       newUser: "New user"
-      userName: "User name"
+      username: "User name"
       firstName: "First name"
-      surname: "Surname"
+      lastName: "Last name"
+      password: "Password"
 
     posts:
       post: "Post"

@@ -2,7 +2,8 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'cms',
+      modulePrefix: 'cms',
+      podModulePrefix: 'cms/pods',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -21,6 +22,16 @@ module.exports = function(environment) {
       serverTokenRevocationEndpoint: '/revoke'
     }
   };
+
+  ENV['simple-auth'] = {
+      authorizer: 'simple-auth-authorizer:oauth2-bearer'
+  };
+  ENV['simple-auth-oauth2'] = {
+      refreshAccessTokens: true,
+      serverTokenEndpoint: '/api/v1/auths/login',
+      serverTokenRevocationEndpoint: '/api/v1/auths/logout',
+  };
+
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

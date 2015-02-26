@@ -1,0 +1,18 @@
+<div class="col-md-2">
+  {{em-button class="btn" default=(t cms.general.button.add) on-click="add"}}
+
+  {{#em-list tagName="div" class="list-group" selectedClass="active"}}
+    {{#each user in this}}
+      {{#em-list-item tagName="div" class="list-group-item" on-select="selectionChanged" data=user}}
+        {{#if user.username}}
+          {{user.username}}
+        {{else}}
+            <i>{{t cms.users.newUser}}</i>
+        {{/if}}
+      {{/em-list-item}}
+    {{/each}}
+  {{/em-list}}
+</div>
+<div class="col-md-10">
+  {{outlet}}
+</div>
