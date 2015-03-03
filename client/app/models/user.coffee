@@ -1,12 +1,16 @@
 `
 import DS from 'ember-data';
 `
+attr = DS.attr
+belongsTo = DS.belongsTo
+hasMany = DS.hasMany
 
 User = DS.Model.extend
-  username:   DS.attr("string")
-  firstName:   DS.attr("string")
-  lastName:   DS.attr("string")
-  password: DS.attr("string")
+  username:   attr("string")
+  firstName:  attr("string")
+  lastName:   attr("string")
+  password:   attr("string")
+  posts:      hasMany("post", { async: true })
 #  group:  DS.belongsTo("group")
 #  avatar: DS.belongsTo("avatar")
 

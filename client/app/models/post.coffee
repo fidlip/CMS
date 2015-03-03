@@ -1,10 +1,14 @@
 `
     import DS from 'ember-data';
 `
+attr = DS.attr
+belongsTo = DS.belongsTo
+hasMany = DS.hasMany
 
 Post = DS.Model.extend
-  title:        DS.attr("string")
-  text:         DS.attr("string")
+  title:        attr("string")
+  text:         attr("string")
+  user:         belongsTo("user", { async: true })
 #  previewImage: DS.belongsTo("image")
 
 

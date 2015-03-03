@@ -43,18 +43,26 @@ module.exports = {
           //required: true,
           //unique: true
         },
+
+        /**
+         * User type
+         * 0=regularuser
+         * 1=editor
+         * 2=redactor
+         * 4=admin
+         *
+         * eg: admin && editor = 1 & 4 = 5
+         **/
         userType: {
             type: 'INTEGER',
             defaultsTo: 0
-                // 0=regularuser
-                // 1=advanceduser
-                // 2=minimalAdmin
-                // 3=fullAdmin
         },
+
         password: {
             type: 'string',
             required: true
         },
+
         tagline: {
             type: 'string'
         },
