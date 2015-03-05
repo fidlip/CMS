@@ -4,3 +4,4 @@
 {{#if isNew}}
   {{em-input type="password" property="password" label=(t cms.users.password) placeholder=(t-p (t cms.users.password))}}
 {{/if}}
+{{em-select property="userType" label=(t cms.users.userType) contentBinding=userTypes optionLabelPath="content.label" optionValuePath="content.id"}}

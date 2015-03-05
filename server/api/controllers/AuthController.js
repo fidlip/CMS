@@ -13,32 +13,28 @@ module.exports = {
 
     if (req.body.grant_type === 'password') {
 
-      console.info("Login:", req.body.username);
-      User.findByUsername(req.body.username).exec(function (err, user) {
-        console.info(" User found:", user);
-
-        if (err) {
-          res.badRequest({
-            error: err
-          });
-
-        } else if (!user || user.length < 1) {
-          console.error("No such user");
+      User.findOne({username: req.body.username}).then(function (user) {
+        if (!user) {
           res.badRequest({
             error: 'No such user'
           });
         } else {
 
-          bcrypt.compare(req.body.password, user[0].password, function (err, result) {
+          bcrypt.compare(req.body.password, user.password, function (err, result) {
             if (err || !result) {
               res.badRequest({
                 error: 'invalidPassword'
               });
             } else {
-              issueTokens(user, res);
+              req.session.user = user;
+              issueToken(user, res);
             }
           });
         }
+      }).catch(function(err) {
+        res.badRequest({
+          error: err
+        });
       });
 
     } else if (req.body.grant_type === 'refresh_token' && req.body.refresh_token) {
@@ -63,7 +59,8 @@ module.exports = {
             delete bearerToken.iat;
 
             var user = bearerToken;
-            issueTokens(user, res);
+            issueToken(user, res);
+            req.session.user = user;
           }
 
         } else {
@@ -83,19 +80,19 @@ module.exports = {
   }
 };
 
-function issueTokens(user, res) {
+function issueToken(user, res) {
   var expirationTimeInMinutes = 60 * 2;
 
-  var token = jwt.sign(user[0], secret, {
+  var token = jwt.sign(user, secret, {
     expiresInMinutes: expirationTimeInMinutes
   });
 
-  var refreshToken = jwt.sign(user[0], refreshSecret, {
+  var refreshToken = jwt.sign(user, refreshSecret, {
     expiresInMinutes: expirationTimeInMinutes
   });
 
   res.send({
-    user: user[0],
+    user: user,
     access_token: token,
     expires_in: expirationTimeInMinutes * 60, // because simple auth expects seconds
     refresh_token: refreshToken

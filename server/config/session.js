@@ -21,7 +21,7 @@ module.exports.session = {
   * of your users, forcing them to log in again.                             *
   *                                                                          *
   ***************************************************************************/
-  secret: 'fca4fcfc0abce0ea222a104a778fc571'
+  secret: 'fca4fcfc0abce0ea222a104a778fc571',
 
 
   /***************************************************************************
@@ -67,11 +67,11 @@ module.exports.session = {
   *                                                                          *
   ***************************************************************************/
 
-  // adapter: 'mongo',
-  // host: 'localhost',
-  // port: 27017,
-  // db: 'sails',
-  // collection: 'sessions',
+  adapter: 'mongo',
+  host: 'localhost',
+  port: 27017,
+  db: 'scms',
+  collection: 'sessions'
 
   /***************************************************************************
   *                                                                          *

@@ -28,9 +28,9 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
-  disk: {
-    adapter: 'sails-disk'
-  },
+  //disk: {
+  //  adapter: 'sails-disk'
+  //},
 
   /***************************************************************************
   *                                                                          *
@@ -44,13 +44,13 @@ module.exports.connections = {
   //docker host uses db, otherwise use localhost or the IP of your db
   //credentials for docker are defined in the fig.yml
   //otherwise dependent on your setup
-  mysql: {
-    adapter: 'sails-mysql',
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'sane'
-  },
+  //mysql: {
+  //  adapter: 'sails-mysql',
+  //  host: 'localhost',
+  //  user: 'root',
+  //  password: 'password',
+  //  database: 'sane'
+  //},
 
   /***************************************************************************
   *                                                                          *
@@ -71,7 +71,7 @@ module.exports.connections = {
     // user: 'username',
     // password: 'password',
     database: 'scms'
-  },
+  }
 
   /***************************************************************************
   *                                                                          *
@@ -85,13 +85,13 @@ module.exports.connections = {
   //docker host uses db, otherwise use localhost or the IP of your db
   //credentials for docker are defined in the fig.yml
   //otherwise dependent on your setup
-  postgresql: {
-    adapter: 'sails-postgresql',
-    host: 'localhost',
-    user: 'postgres',
-    password: '',
-    database: 'postgres'
-  },
+  //postgresql: {
+  //  adapter: 'sails-postgresql',
+  //  host: 'localhost',
+  //  user: 'postgres',
+  //  password: '',
+  //  database: 'postgres'
+  //},
 
   /***************************************************************************
   *                                                                          *
@@ -104,12 +104,12 @@ module.exports.connections = {
   *                                                                          *
   ***************************************************************************/
 
-  redis: {
-    adapter: 'sails-redis',
-    port: 6379,
-    host: 'localhost',
-    database: null
-  }
+  //redis: {
+  //  adapter: 'sails-redis',
+  //  port: 6379,
+  //  host: 'localhost',
+  //  database: null
+  //}
 
   /***************************************************************************
   *                                                                          *

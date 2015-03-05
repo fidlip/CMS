@@ -13,6 +13,6 @@ User = DS.Model.extend
   posts:      hasMany("post", { async: true })
 #  group:  DS.belongsTo("group")
 #  avatar: DS.belongsTo("avatar")
-
+  userType:   attr("number")
 
 `export default User`

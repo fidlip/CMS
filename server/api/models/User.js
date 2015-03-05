@@ -1,3 +1,5 @@
+var Promise = require("../shortcuts/promise");
+
 var bcrypt = require('bcrypt');
 
 /**
@@ -31,15 +33,15 @@ module.exports = {
 //        },
 
         // attributes
-        firstName: 'STRING',
-        lastName: 'STRING',
+        firstName: 'string',
+        lastName: 'string',
         username: {
-            type: 'STRING',
+            type: 'string',
             required: true,
             unique: true
         },
         email: {
-          type: 'EMAIL' // Email type will get validated by the ORM
+          type: 'email' // Email type will get validated by the ORM
           //required: true,
           //unique: true
         },
@@ -54,7 +56,7 @@ module.exports = {
          * eg: admin && editor = 1 & 4 = 5
          **/
         userType: {
-            type: 'INTEGER',
+            type: 'integer',
             defaultsTo: 0
         },
 
@@ -68,20 +70,39 @@ module.exports = {
         },
 
 
-        isAdmin: function() {
-            return this.userType == 3;
+        isUser: function() {
+            return this.userType && true;
         },
+        isEditor: function() {
+            return this.userType & 1 && true;
+        },
+        isRedactor: function() {
+            return this.userType & 2 && true;
+        },
+        isAdmin: function() {
+            return this.userType & 4 && true;
+        },
+
         userAccess: function() {
-            switch (this.userType) {
-                case 1:
-                    return "Privlidged User";
-                case 2:
-                    return "Administrator";
-                case 3:
-                    return "Privlidged Administrator";
-                default:
-                    return "User";
-            }
+          var ret = null;
+
+          function addRole(curr, role) {
+            if (!curr)
+              curr = role;
+            else
+              curr += "&" + role;
+          };
+
+          if (this.isEditor())
+            addRole(ret, "Editor");
+          if (this.isRedactor())
+            addRole(ret, "Redactor");
+          if (this.isAdmin())
+            addRole(ret, "Redactor");
+          if (!ret)
+            addRole(ret, "User");
+
+          return ret;
         },
         toJSON: function() {
             var obj = this.toObject();
@@ -103,5 +124,19 @@ module.exports = {
                 }
             });
         });
+    },
+    beforeValidate: function(user, cb) {
+      User.findById(user.id).then(function(originalUser) {
+        //ignore password and update all
+        delete user.password;
+        _.merge(originalUser, user);
+        cb(null, originalUser);
+
+      }).catch(Promise.OperationalError, function(err) {
+        cb(err);
+      }).catch(function(err) {
+        cb(err);
+      });
+
     }
 };

@@ -26,6 +26,7 @@ en =
       firstName: "First name"
       lastName: "Last name"
       password: "Password"
+      userType: "User type"
 
     posts:
       post: "Post"

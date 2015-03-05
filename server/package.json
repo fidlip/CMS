@@ -6,6 +6,7 @@
   "keywords": [],
   "dependencies": {
     "bcrypt": "^0.8.0",
+    "connect-mongo": "latest",
     "ejs": "~0.8.4",
     "express-jwt": "1.0.0",
     "gm": "^1.17.0",
@@ -43,5 +44,8 @@
     "url": "git://github.com/fidlip/server.git"
   },
   "author": "fidlip",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "sails-hook-autoreload": "^0.11.4"
+  }
 }
