@@ -1,0 +1,9 @@
+<h3>Error {{status}}</h3>
+{{log this}}
+
+{{#each err in responseJSON.errors}}
+  {{err}}
+{{/each}}
+
+
+{{outlet}}
