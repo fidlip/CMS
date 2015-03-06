@@ -1,8 +1,14 @@
 <h3>Error {{status}}</h3>
 {{log this}}
 
+{{#if model}}
+  {{t model}}
+{{/if}}
+
 {{#each err in responseJSON.errors}}
-  {{err}}
+  {{#if err.code}}
+    {{t-s err.code}}
+  {{/if}}
 {{/each}}
 
 

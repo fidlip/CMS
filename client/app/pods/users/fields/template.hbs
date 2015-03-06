@@ -1,7 +1,7 @@
-{{em-input property="username" label=(t cms.users.username) placeholder=(t-p (t cms.users.username))}}
-{{em-input property="firstName" label=(t cms.users.firstName) placeholder=(t-p (t cms.users.firstName))}}
-{{em-input property="lastName" label=(t cms.users.lastName) placeholder=(t-p (t cms.users.lastName))}}
+{{em-input property="username" label=(t 'cms.users.username') placeholder=(t-p 'cms.users.username')}}
+{{em-input property="firstName" label=(t 'cms.users.firstName') placeholder=(t-p 'cms.users.firstName')}}
+{{em-input property="lastName" label=(t 'cms.users.lastName') placeholder=(t-p 'cms.users.lastName')}}
 {{#if isNew}}
-  {{em-input type="password" property="password" label=(t cms.users.password) placeholder=(t-p (t cms.users.password))}}
+  {{em-input type="password" property="password" label=(t 'cms.users.password') placeholder=(t-p 'cms.users.password')}}
 {{/if}}
-{{em-select property="userType" label=(t cms.users.userType) contentBinding=userTypes optionLabelPath="content.label" optionValuePath="content.id"}}
+{{em-select property="userType" label=(t 'cms.users.userType') contentBinding=userTypes optionLabelPath="content.label" optionValuePath="content.id"}}

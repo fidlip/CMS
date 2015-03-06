@@ -27,11 +27,23 @@ en =
       lastName: "Last name"
       password: "Password"
       userType: "User type"
+      types: {
+        user: "User"
+        editor: "Editor"
+        redactor: "Redactor"
+        admin: "Admin"
+      }
 
     posts:
       post: "Post"
       newPost: "New post"
       title: "Title"
       text: "Text"
+
+    server:
+      error:
+        unexpectedError: "Unexpected error!"
+        permissionDenied: "Permission denied!"
+        unknownUser: "Unknown user!"
 
 `export default en;`

@@ -8,7 +8,7 @@ module.exports = function isAdmin (req, res, next) {
     if (!user.isAdmin()) {
       res.status(403);
       res.send({
-        errors: [{ code: "server.error.permissionDenied" }]
+        errors: [{ code: "error.permissionDenied" }]
       });
     } else {
       next();
@@ -17,21 +17,13 @@ module.exports = function isAdmin (req, res, next) {
   }).catch(Promise.OperationalError, function(err) {
     res.status(403);
     res.send({
-      errors: [{ code: "server.error.userNotFound" }]
+      errors: [{ code: "error.userNotFound" }]
     });
   }).catch(function(err) {
     res.status(500);
     res.send({
-      errors: [{ code: "server.error.unexpectedError" }]
+      errors: [{ code: "error.unexpectedError" }]
     });
   });
-
-
-
-  //if (req.session.user.userType != 3) {
-  //  res.redirect('/');
-  //} else {
-  //  next();
-  //}
 
 };

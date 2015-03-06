@@ -1,5 +1,5 @@
 <div class="col-md-2">
-  {{em-button class="btn" default=(t cms.general.button.add) on-click="add"}}
+  {{em-button class="btn" default=(t 'cms.general.button.add') on-click="add"}}
 
   {{#em-list tagName="div" class="list-group" selectedClass="active"}}
     {{#each post in this}}
@@ -7,7 +7,7 @@
         {{#if post.title}}
           {{post.title}}
         {{else}}
-            <i>{{t cms.posts.newPost}}</i>
+            <i>{{t 'cms.posts.newPost'}}</i>
         {{/if}}
       {{/em-list-item}}
     {{/each}}

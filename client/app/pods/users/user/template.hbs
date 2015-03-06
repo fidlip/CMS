@@ -1,13 +1,13 @@
-<h3>{{t cms.users.user}}</h3>
+<h3>{{t 'cms.users.user'}}</h3>
 
 {{#em-form model=controller}}
   {{partial "users/fields"}}
 {{/em-form}}
 
 <div class="row">
-  {{em-button class="btn" default=(t cms.general.button.cancel) on-click="cancel"}}
+  {{em-button class="btn" default=(t 'cms.general.button.cancel') on-click="cancel"}}
   {{#unless isNew}}
-    {{em-button class="btn" default=(t cms.general.button.delete) on-click="delete"}}
+    {{em-button class="btn" default=(t 'cms.general.button.delete') on-click="delete"}}
   {{/unless}}
 </div>
 

@@ -3,11 +3,13 @@
 `
 
 Mixin = Ember.Mixin.create
-  userTypes: [
-    {id: 0, label: "User"}
-    {id: 1, label: "Editor"}
-    {id: 2, label: "Redactor"}
-    {id: 4, label: "Admin"}
-  ]
+  userTypes: (->
+    [
+      {id: 0, label: @t("cms.users.types.user")}
+      {id: 1, label: @t("cms.users.types.editor")}
+      {id: 2, label: @t("cms.users.types.redactor")}
+      {id: 4, label: @t("cms.users.types.admin")}
+    ]
+  ).property()
 
 `export default Mixin;`
