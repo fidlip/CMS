@@ -16,14 +16,14 @@ module.exports = {
       User.findOne({username: req.body.username}).then(function (user) {
         if (!user) {
           res.badRequest({
-            error: 'No such user'
+            errors: [{ code: "error.unknownUser" }]
           });
         } else {
 
           bcrypt.compare(req.body.password, user.password, function (err, result) {
             if (err || !result) {
               res.badRequest({
-                error: 'invalidPassword'
+                errors: [{ code: "error.invalidPassword" }]
               });
             } else {
               req.session.user = user;

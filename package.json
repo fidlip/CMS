@@ -9,6 +9,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "sane-cli": "0.0.23"
+    "sane-cli": "latest"
   }
 }

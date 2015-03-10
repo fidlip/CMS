@@ -43,7 +43,10 @@ en =
     server:
       error:
         unexpectedError: "Unexpected error!"
-        permissionDenied: "Permission denied!"
+        noSessionUser: "No user connected with session!"
+
         unknownUser: "Unknown user!"
+        invalidPassword: "InvalidPassword!"
+        permissionDenied: "Permission denied!"
 
 `export default en;`

@@ -126,17 +126,21 @@ module.exports = {
         });
     },
     beforeValidate: function(user, cb) {
-      User.findById(user.id).then(function(originalUser) {
-        //ignore password and update all
-        delete user.password;
-        _.merge(originalUser, user);
-        cb(null, originalUser);
+      if (!user || !user.id) {
+        cb(null, user);
 
-      }).catch(Promise.OperationalError, function(err) {
-        cb(err);
-      }).catch(function(err) {
-        cb(err);
-      });
+      } else {
+        User.findById(user.id).then(function (originalUser) {
+          //ignore password and update all
+          delete user.password;
+          _.merge(originalUser, user);
+          cb(null, originalUser);
 
+        }).catch(Promise.OperationalError, function (err) {
+          cb(err);
+        }).catch(function (err) {
+          cb(err);
+        });
+      }
     }
 };

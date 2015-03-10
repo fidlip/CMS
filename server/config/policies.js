@@ -35,7 +35,8 @@ module.exports.policies = {
     '*': true
   },
   UserController: {
-    "*": [ isAdmin, propagateId("user") ]
+    create: true,
+    "edit": [ isAdmin, propagateId("user") ]
   },
   PostController: {
     create: false,
