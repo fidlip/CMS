@@ -13,7 +13,7 @@ Router.map ->
     @resource 'posts.post', path: ':post_id'
 
 
-  @route("login");
-  @route("register");
+  @route("login")
+  @route("register")
 
 `export default Router;`

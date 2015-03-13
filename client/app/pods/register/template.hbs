@@ -1,26 +1,16 @@
-{{outlet}}
 <div class="container">
-    <div class="page-header">
-        <h2>User Registration</h2>
-    </div>
+  <h3>{{t 'cms.general.registration'}}</h3>
 
-    <form {{action 'createUser' model on='submit' }}>
-        <div class="form-group">
-            <label for="firstName">Name</label>
-            {{input id='firstName' placeholder='Enter First Name' class='form-control' value=firstName}}
-        </div>
-        <div class="form-group">
-            <label for="lastName">Last Name</label>
-            {{input id='lastName' placeholder='Enter Last Name' class='form-control' value=lastName}}
-        </div>
-        <div class="form-group">
-            <label for="username">Username</label>
-            {{input id='username' placeholder='Enter your email' type='email' class='form-control' value=username}}
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            {{input id='password' placeholder='Enter password' class='form-control' type='password' value=password}}
-        </div>
-        <button type="submit" class="btn btn-default">Register</button>
-    </form>
+  {{#em-form model=controller}}
+    {{em-input property="username" label=(t 'cms.users.username') placeholder=(t-p 'cms.users.username')}}
+    {{em-input property="firstName" label=(t 'cms.users.firstName') placeholder=(t-p 'cms.users.firstName')}}
+    {{em-input property="lastName" label=(t 'cms.users.lastName') placeholder=(t-p 'cms.users.lastName')}}
+    {{#if isNew}}
+      {{em-input type="password" property="password" label=(t 'cms.users.password') placeholder=(t-p 'cms.users.password')}}
+      {{em-input type="password" property="password" label=(t 'cms.users.password') placeholder=(t-p 'cms.users.passwordAgain')}}
+    {{/if}}
+  {{/em-form}}
+
 </div>
+
+{{outlet}}

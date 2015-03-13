@@ -1,8 +1,9 @@
 `
 import Ember from 'ember';
+import EV from 'ember-validations';
 `
 
-Mixin = Ember.Mixin.create
+Mixin = Ember.Mixin.create EV.Mixin,
 
   validations:
     username:
@@ -11,6 +12,8 @@ Mixin = Ember.Mixin.create
     firstName:
       presence: true
     lastName:
+      presence: true
+    password:
       presence: true
 
 `export default Mixin;`

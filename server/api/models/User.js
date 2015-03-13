@@ -41,9 +41,9 @@ module.exports = {
             unique: true
         },
         email: {
-          type: 'email' // Email type will get validated by the ORM
+          type: 'email', // Email type will get validated by the ORM
           //required: true,
-          //unique: true
+          unique: true
         },
 
         /**

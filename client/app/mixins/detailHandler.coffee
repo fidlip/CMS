@@ -1,9 +1,8 @@
 `
     import Ember from 'ember';
-    import EV from 'ember-validations';
 `
 
-Mixin = Ember.Mixin.create EV.Mixin,
+Mixin = Ember.Mixin.create
   superRoute: null
 
 #  modelChanged: Ember.observer "model", (model)->

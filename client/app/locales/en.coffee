@@ -5,10 +5,15 @@ en =
 
       placeholder: "Enter a %@1..."
 
+      registration: "Registration"
+
       button:
         add: "Add"
         delete: "Delete"
         cancel: "Cancel"
+
+      select:
+        prompt: "please select ..."
 
     menu:
       home: "Home"
@@ -26,6 +31,7 @@ en =
       firstName: "First name"
       lastName: "Last name"
       password: "Password"
+      passwordAgain: "Password again"
       userType: "User type"
       types: {
         user: "User"
@@ -48,5 +54,10 @@ en =
         unknownUser: "Unknown user!"
         invalidPassword: "InvalidPassword!"
         permissionDenied: "Permission denied!"
+        unknownGrantType: "Unknown grant type!"
+        missingAuthorizationHeader: "Missing authorization header!"
+        badAuthorizationHeader: "Bad authorization header!"
+        badAuthorizationScheme: "Bad authorization scheme!"
+        tokensDoNotEqual: "Tokens do not equal!"
 
 `export default en;`

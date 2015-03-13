@@ -21,4 +21,7 @@ module.exports = {
   //   connection: 'someMongodbServer'
   // }
 
+  auth: {
+    expirationInMinutes: 2
+  }
 };

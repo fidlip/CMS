@@ -33,7 +33,7 @@ module.exports = {
         }
       }).catch(function(err) {
         res.badRequest({
-          error: err
+          errors: [err]
         });
       });
 
@@ -49,25 +49,32 @@ module.exports = {
 
           if (/^Bearer$/i.test(scheme)) {
             token = credentials;
+
+            var bearerToken = jwt.verify(token, secret);
+            var refreshToken = jwt.verify(req.body.refresh_token, refreshSecret);
+
+            if (_.isEqual(bearerToken, refreshToken)) {
+              delete bearerToken.exp;
+              delete bearerToken.iat;
+
+              var user = bearerToken;
+              issueToken(user, res);
+              req.session.user = user;
+            } else {
+              res.badRequest({errors: [{ code: "error.tokenDoNotEqual" }]})
+            }
+          } else {
+            res.badRequest({errors: [{ code: "error.badAuthorizationScheme" }]})
           }
-
-          var bearerToken = jwt.verify(token, secret);
-          var refreshToken = jwt.verify(req.body.refresh_token, refreshSecret);
-
-          if (_.isEqual(bearerToken, refreshToken)) {
-            delete bearerToken.exp;
-            delete bearerToken.iat;
-
-            var user = bearerToken;
-            issueToken(user, res);
-            req.session.user = user;
-          }
-
         } else {
-
+          res.badRequest({errors: [{ code: "error.badAuthorizationHeader" }]})
         }
-
+      } else {
+        res.badRequest({errors: [{ code: "error.missingAuthorizationHeader" }]})
       }
+
+    } else {
+      res.badRequest({errors: [{ code: "error.unknownGrantType" }]})
     }
   },
 
@@ -81,7 +88,7 @@ module.exports = {
 };
 
 function issueToken(user, res) {
-  var expirationTimeInMinutes = 60 * 2;
+  var expirationTimeInMinutes = sails.config.auth.expirationInMinutes || 60 * 2;
 
   var token = jwt.sign(user, secret, {
     expiresInMinutes: expirationTimeInMinutes
